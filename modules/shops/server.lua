@@ -141,6 +141,11 @@ lib.callback.register('ox_inventory:openShop', function(source, data)
 			if not group then return end
 		end
 
+		if shop.canInteract then
+			local canInteract = shop.canInteract(left, shop)
+			if not canInteract then return end
+		end
+
 		if type(shop.coords) == 'vector3' and #(GetEntityCoords(GetPlayerPed(source)) - shop.coords) > 10 then
 			return
 		end
