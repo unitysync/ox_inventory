@@ -27,7 +27,7 @@
     "watch": "vite build --watch",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "format": "prettier --write \"./src/**/*.{ts,tsx,css}\""
+    "format": "oxfmt"
   },
   "eslintConfig": {
     "extends": [
@@ -54,7 +54,6 @@
     "@types/react-redux": "^7.1.33",
     "cross-env": "^7.0.3",
     "csstype": "^2.6.21",
-    "prettier": "^2.8.8",
     "typescript": "^6.0.3",
     "vite": "^8.0.10"
   }
