@@ -104,8 +104,8 @@ export const getTargetInventory = (
       ? state.leftInventory
       : state.rightInventory
     : sourceType === InventoryType.PLAYER
-    ? state.rightInventory
-    : state.leftInventory,
+      ? state.rightInventory
+      : state.leftInventory,
 });
 
 export const itemDurability = (metadata: any, curTime: number) => {
