@@ -1352,7 +1352,8 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 				maxWeight = shared.playerweight,
 			},
 			imagepath = client.imagepath,
-			imageversion = client.imageversion
+			imageversion = client.imageversion,
+			imageextension = client.imageextension
 		}
 	})
 

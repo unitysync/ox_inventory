@@ -96,6 +96,7 @@ else
         weaponnotify = GetConvarBool('inventory:weaponnotify', true),
         imagepath = GetConvar('inventory:imagepath', 'nui://ox_inventory/web/images'),
         imageversion = GetConvar('inventory:imageversion', ''),
+        imageextension = GetConvar('inventory:imageextension', 'png'),
         dropprops = GetConvarBool('inventory:dropprops', false),
         dropmodel = joaat(GetConvar('inventory:dropmodel', 'prop_med_bag_01b')),
         weaponmismatch = GetConvarBool('inventory:weaponmismatch', true),

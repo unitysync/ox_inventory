@@ -2,7 +2,7 @@ import { Inventory, InventoryType, ItemData, Slot, SlotWithItem, State } from '.
 import { isEqual } from 'lodash-es';
 import { store } from '../store';
 import { Items } from '../store/items';
-import { imagepath, imageversion } from '../store/imagepath';
+import { imageextension, imagepath, imageversion } from '../store/imagepath';
 import { fetchNui } from '../utils/fetchNui';
 import { withImageVersion } from '../utils/withImageVersion';
 
@@ -146,9 +146,9 @@ export const getItemUrl = (item: string | SlotWithItem) => {
 
     const metadata = item.metadata;
 
-    // @todo validate urls and support webp
+    // @todo validate urls
     if (metadata?.imageurl) return `${metadata.imageurl}`;
-    if (metadata?.image) return withImageVersion(`${imagepath}/${metadata.image}.png`, imageversion);
+    if (metadata?.image) return withImageVersion(`${imagepath}/${metadata.image}.${imageextension}`, imageversion);
   }
 
   const itemName = isObj ? (item.name as string) : item;
@@ -156,5 +156,5 @@ export const getItemUrl = (item: string | SlotWithItem) => {
 
   if (itemData?.image) return itemData.image;
 
-  return withImageVersion(`${imagepath}/${itemName}.png`, imageversion);
+  return withImageVersion(`${imagepath}/${itemName}.${imageextension}`, imageversion);
 };
