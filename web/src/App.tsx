@@ -2,7 +2,7 @@ import InventoryComponent from './components/inventory';
 import useNuiEvent from './hooks/useNuiEvent';
 import { Items } from './store/items';
 import { Locale } from './store/locale';
-import { setImagePath } from './store/imagepath';
+import { setImagePath, setImageVersion } from './store/imagepath';
 import { setupInventory } from './store/inventory';
 import { Inventory } from './typings';
 import { useAppDispatch } from './store';
@@ -96,11 +96,13 @@ const App: React.FC = () => {
     items: typeof Items;
     leftInventory: Inventory;
     imagepath: string;
-  }>('init', ({ locale, items, leftInventory, imagepath }) => {
+    imageversion?: string;
+  }>('init', ({ locale, items, leftInventory, imagepath, imageversion }) => {
     for (const name in locale) Locale[name] = locale[name];
     for (const name in items) Items[name] = items[name];
 
     setImagePath(imagepath);
+    setImageVersion(imageversion);
     dispatch(setupInventory({ leftInventory }));
   });
 
